@@ -1,30 +1,21 @@
-import java.util.Scanner;
 
-public class Test2 {
-    public static void main(String args[]){
-        Scanner in = new Scanner(System.in);
-        // приобразования в Int
-        int n = Integer.parseInt(in.nextLine());
-        String[] vectorN  = in.nextLine().split(" ");
+import java.util.*;
+import java.io.*;
 
-        int m = Integer.parseInt(in.nextLine());
-        String[] vectorM = in.nextLine().split(" ");
-
-        int index = 0;
-        for(String number: vectorN){
-            int cout = Integer.parseInt(number);
-
-            for(int i = 0; i < cout; i++){
-                System.out.println(vectorM[index]);
-            }
-            System.out.println(" ");
-
-            index++;
-            if(index >= vectorM.length){
-                index = 0;
-            }
-        }
-
-
+class Cake {
+    public static void main(String[] args) throws IOException {
+        int number;
+        int guest;
+        String str;
+        FileReader file = new FileReader("input.txt"); // Считывание данных из файла
+        Scanner sc = new Scanner(file);
+        str = sc.nextLine();
+        guest = Integer.valueOf(str);
+        number = (guest == 1) ? 0 :
+                (guest % 2 == 1) ? guest : guest / 2;
+        FileWriter fileOut = new FileWriter("output.txt");
+        fileOut.write(String.valueOf(number));
+        fileOut.close();
     }
+
 }

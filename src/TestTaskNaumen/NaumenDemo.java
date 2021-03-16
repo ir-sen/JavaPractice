@@ -15,8 +15,9 @@ public class NaumenDemo {
 
         int index = 0;
         for(String number: vectorN){
-            int count = Integer.parseInt(number); //
+            int count = Integer.parseInt(number); //Форматировать значения в Int
 
+            // После получения значения он столько раз выводит полученное
             for(int i = 0; i < count; i++){
                 System.out.println(vectorM[index]);
             }
